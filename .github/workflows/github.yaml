@@ -1,6 +1,16 @@
 name: rework-from-jenkins
 
-on: push
+on:
+    workflow_dispatch:
+      inputs:
+        OS:
+          description: 'Pick OS (linux, darwin, windows, all)'
+          required: true
+          default: 'linux'
+        ARCH:
+          description: 'Pick ARCH (amd64, aarch64)'
+          required: true
+          default: 'amd64'
 
 jobs:
     ci:
@@ -11,5 +21,6 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
 
-            - name: Run test
-              run: echo 'Runs some tests'
+            - name: Building
+              run: echo 'Build...'
+                echo 
