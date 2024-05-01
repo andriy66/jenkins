@@ -22,5 +22,7 @@ jobs:
               uses: actions/checkout@v3
 
             - name: Building
-              run: echo 'Build...'
-                echo 
+              run: |
+                echo 'Build...'
+                echo 'Build for platform: ${{ github.event.inputs.OS }}'
+                echo 'Build for arch: ${{ github.event.inputs.ARCH }}'
