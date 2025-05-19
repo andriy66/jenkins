@@ -4,9 +4,15 @@ on:
     workflow_dispatch:
       inputs:
         OS:
-          description: 'Pick OS (linux, darwin, windows, all)'
-          required: true
-          default: 'linux'
+        description: 'Pick OS'
+        required: true
+        default: 'linux'
+        type: choice
+        options:
+          - linux
+          - darwin
+          - windows
+          - all
         ARCH:
           description: 'Pick ARCH (amd64, aarch64)'
           required: true
